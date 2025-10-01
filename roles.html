@@ -55,6 +55,7 @@
     .dev2 { border-left-color: #3498db; }     /* Blue */
     .dev3 { border-left-color: #e3e622; }     /* Orange */
     .all { border-left-color: #cccccc;}       /* light gray */
+    .done { text-decoration: line-through; }    /* mark tasks complete with strikethrough */
 
     /* Highlighted State */
     .highlight {
@@ -86,12 +87,12 @@
   <div id="tasks">
 
     <h2>Initial Tasks</h2>
-    <div class="task rm">TASK ONE (Release Manager): 
+    <div class="task rm done">TASK ONE (Release Manager): 
         <ul>
-            <li><s>Create a public repository on GitHub</s></li>
-            <li><s>Add everyone else</s> (including Prof. Sampson) <s>as collaborators</s> (awaiting confirmation on Prof Sue's username)</li>
+            <li>Create a public repository on GitHub</li>
+            <li>Add everyone else (including Prof. Sampson) as collaborators (awaiting confirmation on Prof Sue's username)</li>
         </ul></div>
-    <div class="task dev1 dev2 dev3 rm all">TASK TWO (everyone):
+    <div class="task dev1 dev2 dev3 rm all done">TASK TWO (everyone):
         <ul>   
             <li>Accept invite</li>
             <li>Clone the new repository to your computer - https://github.com/jessmonnier/gitlab.git</li>
@@ -100,7 +101,7 @@
 
     <!-- Second Set -->
     <h2>Set Two</h2>
-    <div class="task dev1">TASK THREE (Dev 1):
+    <div class="task dev1 done">TASK THREE (Dev 1):
         <ul>
             <li>Create & switch to a new branch named "foundation"</li>
             <li>Create index.html with a basic HTML structure in the foundation branch</li>
@@ -108,12 +109,12 @@
             <li>Go to GitHub & create a pull request (PR) for your branch & main branch</li>
         </ul>
     </div>
-    <div class="task rm">TASK FOUR (RM):
+    <div class="task rm done">TASK FOUR (RM):
         <ul>
             <li>Check out & approve the pull request (PR)</li>
         </ul>
     </div>
-    <div class="task dev2">TASK FIVE (Dev 2):
+    <div class="task dev2 done">TASK FIVE (Dev 2):
         <ul>
             <li>Pull down changes from repo/main branch</li>
             <li>Create new "quotes" branch & switch to it</li>
@@ -123,12 +124,12 @@
             <li>Create pull request (PR)</li>
         </ul>
     </div>
-    <div class="task rm">TASK SIX (RM):
+    <div class="task rm done">TASK SIX (RM):
         <ul>
             <li>Check out & approve pull request if it looks good</li>
         </ul>
     </div>
-    <div class="task dev3">TASK SEVEN (Dev 3):
+    <div class="task dev3 done">TASK SEVEN (Dev 3):
         <ul>
             <li>Pull down changes</li>
             <li>Create "styles" branch and switch to it</li>
@@ -138,7 +139,7 @@
             <li>Create PR</li>
         </ul>
     </div>
-    <div class="task rm">TASK EIGHT (RM):
+    <div class="task rm done">TASK EIGHT (RM):
         <ul><li>Review & approve pull request</li></ul>
     </div>
 
