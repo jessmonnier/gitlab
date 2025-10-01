@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Roles Highlight</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #1e1e1e;
+      color: #ddd;
+      padding: 50px;
+    }
+
+    .controls {
+      margin-bottom: 20px;
+    }
+
+    .controls button {
+      margin-right: 10px;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: #444;
+      color: white;
+    }
+
+    .controls button.active {
+      background-color: #888;
+    }
+
+    .other {
+      margin: 10px 0px 30px 0px;
+    }
+
+    .other a, .other a:visited {
+      color: #3498db;
+    }
+    .other a:hover {
+      color: white;
+    }
+
+    .task {
+      background-color: #2a2a2a;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-left: 5px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    /* Role Colors */
+    .rm { border-left-color: #e74c3c; }       /* Red */
+    .dev1 { border-left-color: #2ecc71; }     /* Green */
+    .dev2 { border-left-color: #3498db; }     /* Blue */
+    .dev3 { border-left-color: #e3e622; }     /* Orange */
+    .all { border-left-color: #cccccc;}       /* light gray */
+
+    /* Highlighted State */
+    .highlight {
+      background-color: #3a3a3a;
+      font-weight: bold;
+      color: #fff;
+      transform: scale(1.02);
+    }
+
+    .faded {
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Project Tasks by Role</h1>
+
+  <div class="controls">
+    <button data-role="all" class="active">Show All</button>
+    <button data-role="rm">Release Manager</button>
+    <button data-role="dev1">Developer 1</button>
+    <button data-role="dev2">Developer 2</button>
+    <button data-role="dev3">Developer 3</button>
+  </div>
+
+  <div class="other"><a href="full_roles.pdf">Link to the Full PDF Instructions</a></div>
+
+  <div id="tasks">
+
+    <h2>Initial Tasks</h2>
+    <div class="task rm">TASK ONE (Release Manager): 
+        <ul>
+            <li><s>Create a public repository on GitHub</s></li>
+            <li><s>Add everyone else</s> (including Prof. Sampson) <s>as collaborators</s> (awaiting confirmation on Prof Sue's username)</li>
+        </ul></div>
+    <div class="task dev1 dev2 dev3 rm all">TASK TWO (everyone):
+        <ul>   
+            <li>Accept invite</li>
+            <li>Clone the new repository to your computer - https://github.com/jessmonnier/gitlab.git</li>
+        </ul>
+    </div>
+
+    <!-- Second Set -->
+    <h2>Set Two</h2>
+    <div class="task dev1">TASK THREE (Dev 1):
+        <ul>
+            <li>Create & switch to a new branch named "foundation"</li>
+            <li>Create index.html with a basic HTML structure in the foundation branch</li>
+            <li>Stage, commit, & push the new file</li>
+            <li>Go to GitHub & create a pull request (PR) for your branch & main branch</li>
+        </ul>
+    </div>
+    <div class="task rm">TASK FOUR (RM):
+        <ul>
+            <li>Check out & approve the pull request (PR)</li>
+        </ul>
+    </div>
+    <div class="task dev2">TASK FIVE (Dev 2):
+        <ul>
+            <li>Pull down changes from repo/main branch</li>
+            <li>Create new "quotes" branch & switch to it</li>
+            <li>index.html: Add &lt;h1&gt; element with title and &lt;blockquote&gt; with favorite quote and author</li>
+            <li>Create blank style.css</li>
+            <li>Stage, commit, & push changes in your branch</li>
+            <li>Create pull request (PR)</li>
+        </ul>
+    </div>
+    <div class="task rm">TASK SIX (RM):
+        <ul>
+            <li>Check out & approve pull request if it looks good</li>
+        </ul>
+    </div>
+    <div class="task dev3">TASK SEVEN (Dev 3):
+        <ul>
+            <li>Pull down changes</li>
+            <li>Create "styles" branch and switch to it</li>
+            <li>Add some styles to style.css & a link to it in index.html</li>
+            <li>Change quote author to Justin Bieber</li>
+            <li>Save & stage changes, commit, push</li>
+            <li>Create PR</li>
+        </ul>
+    </div>
+    <div class="task rm">TASK EIGHT (RM):
+        <ul><li>Review & approve pull request</li></ul>
+    </div>
+
+    <!-- Third Set -->
+    <h2>Set Three</h2>
+    <div class="task dev1">TASK NINE (Dev 1):
+        <ul>
+            <li>Pull down changes</li>
+            <li>Create a new branch from the main branch called "hotfix1" and fix the author of the quote</li>
+            <li>Stage/commit but <span style="font-size:1.3em;"></span>DO NOT PUSH</span></li>
+        </ul>
+    </div>
+    <div class="task dev2">TASK TEN (Dev 2):
+      <ul>
+        <li>Pull down changes</li>
+        <li>Create a new branch called "authorupdate"</li>
+        <li>Change the author's name to UPPERCASE</li>
+        <li>Stage but <span style="font-size:1.3em;">DO NOT COMMIT OR PUSH</span></li>
+      </ul>
+    </div>
+    <div class="task dev1">TASK ELEVEN (Dev 1):
+      <ul>
+        <li>Push hotfix1</li>
+        <li>Create PR</li>
+      </ul>
+    </div>
+    <div class="task rm">TASK TWELVE (RM):
+      <ul><li>Review & approve hotfix1 changes</li></ul>
+    </div>
+    <div class="task dev2">TASK THIRTEEN (Dev 2):
+      <ul>
+        <li>Switch to master branch & pull changes</li>
+        <li>Merge changes into "authorupdate" branch</li>
+        <li>Resolve conflicts, commit, push, create PR</li>
+      </ul>
+    </div>
+
+    <!-- Final Set -->
+    <h2>Final Set</h2>
+    <div class="task rm">TASK FOURTEEN (RM):
+      <ul><li>Review/approve the changes</li></ul>
+    </div>
+    <div class="task dev3">TASK FIFTEEN (Dev 3):
+      <ul>
+        <li>No really, it's Justin Bieber. Create "hotfix2" branch, change author back to Justin Bieber</li>
+        <li>Stage/commit/push/create pull request</li>
+      </ul>
+    </div>
+    <div class="task rm">FINAL TASK (RM):
+      <ul><li>No, it's NOT Justin Bieber. Review PR, leave comment that it's incorrect, close request without merging</li></ul>
+    </div>
+
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.controls button');
+    const tasks = document.querySelectorAll('.task');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Reset all buttons
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const role = button.dataset.role;
+
+        tasks.forEach(task => {
+          task.classList.remove('highlight', 'faded');
+
+          if (role === 'all') return;
+
+          if (task.classList.contains(role)) {
+            task.classList.add('highlight');
+          } else {
+            task.classList.add('faded');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
