@@ -1,0 +1,29 @@
+body {
+    background-color: #3b292e;
+    color: #e09bac;
+    margin: 50px 100px 50px 100px;
+}
+
+.content {
+    padding: 5px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 1.8em;
+    color: #e26c8a;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 1em 2em;
+    padding: 0.5em 1em;
+    border-left: 4px solid #e26c8a;
+    background: #69535a;
+}
+
+.quote-author {
+    text-align: right;
+    margin-right: 3em;
+    font-size: 0.8em;
+}
